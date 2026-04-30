@@ -3,58 +3,33 @@
 using namespace std;
 
 class Nome {
-
      private:
-
           // Declaração de atributo.
           string valor;
-          
-
-
-
      public:
-
           void set(string);
-
           string get();
 
 };
 
 class Matricula {
-
      private:
-
           // Declaração de atributo.
           int valor;
-
-
-
      public:
-
           void set(int);
-
           int get();    
-
 };
 
 class Estudante {
-
      private:
-
           // Declarações de atributos.
           Nome nome;
           Matricula matricula;
-
-
-
      public:
-
           Estudante(Nome&, Matricula&);
-
           Nome getNome();
-
           Matricula getMatricula();
-
 };
 
 // Implementações de métodos.
@@ -88,31 +63,24 @@ Matricula Estudante::getMatricula(){
 }
 
 int main(){
-
      string dadoA;
-
      int dadoB;  
 
      cin >> dadoA;
-
      cin >> dadoB;
 
      Nome nome;
-
      Matricula matricula;
 
      nome.set(dadoA);
-
      matricula.set(dadoB);
 
      Estudante estudante(nome, matricula);
 
      cout << estudante.getNome().get();
-
      cout << estudante.getMatricula().get();
 
      return 0;
-
 }
 
 /*INSTRUÇÕES

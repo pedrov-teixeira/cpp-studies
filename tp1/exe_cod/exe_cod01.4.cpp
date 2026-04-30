@@ -3,21 +3,13 @@
 using namespace std;
 
 class Estudante {
-
      private:
-
      // Declarações de atributos.
      string nome;
      static int contador;
-
-
-
      public:    
-
           Estudante(string);
-
           static int getContador();
-
           string getNome();
 
 };
@@ -41,29 +33,23 @@ string Estudante::getNome() {
 int Estudante::contador = 0;
 
 int main(){
-
      string nomeA, nomeB;   
 
      cin >> nomeA;
-
      cin >> nomeB;
-
      cout << Estudante::getContador();
 
      Estudante estudanteA(nomeA);
 
      cout << Estudante::getContador();
-
      cout << estudanteA.getNome();  
 
      Estudante estudanteB(nomeB);    
 
      cout << Estudante::getContador();
-
      cout << estudanteB.getNome();  
 
      return 0;
-
 }
 
 /* INSTRUÇÕES

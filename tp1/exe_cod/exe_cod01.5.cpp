@@ -3,15 +3,10 @@
 using namespace std;
 
 class Endereco {
-
      private:
-
      // Declarações de atributos.
      string cidade;
      string estado;
-
-
-
      public:    
 
      // Declarações de métodos.  
@@ -19,8 +14,6 @@ class Endereco {
     Endereco(string, string);
     string getCidade();
     string getEstado();
-
-
 };
 
 // Implementações de métodos.
@@ -47,21 +40,16 @@ int main(){
     string cidade, estado;
 
     cin >> cidade;
-
     cin >> estado;    
 
     Endereco enderecoA(cidade);
-
     Endereco enderecoB(cidade, estado);   
 
     cout << enderecoA.getCidade();
-
     cout << enderecoB.getCidade();
-
     cout << enderecoB.getEstado();
 
     return 0;
-
 }
 
 /*  
