@@ -21,13 +21,13 @@ int main(){
     std::cin >> meuCodigo;
 
     std::cout << "Digite seu nome: ";
-    std::cin >> meuNome;
+    std::getline(std::cin >> std::ws, meuNome);
 
     std::cout << "Digite seu tempo: ";
     std::cin >> meuTempo;
 
     std::cout << "Digite seu texto: ";
-    std::cin >> meuTexto;
+    std::getline(std::cin >> std::ws, meuTexto);
 
     //CLASS PRIORIDADE - TESTE UNITARIO
     try {
