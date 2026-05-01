@@ -3,35 +3,36 @@
 
 #include <string>
 #include <stdexcept>
+using namespace std;
 
 class Prioridade{
     private:
-        std::string valor;
-        void validar(std::string valor);
+        string valor;
+        void validar(string valor);
 
     public:
-        void setValor(std::string valor);
-        std::string getValor() const;
+        void setValor(string valor);
+        string getValor() const;
 };
 
 class Codigo{
     private:
-        std::string valor;
-        void validar(std::string valor);
+        string valor;
+        void validar(string valor);
     
     public:
-        void setValor(std::string valor);
-        std::string getValor() const;
+        void setValor(string valor);
+        string getValor() const;
 };
 
 class Nome{
     private:
-        std::string valor;
-        void validar(std::string valor);
+        string valor;
+        void validar(string valor);
     
     public:
-        void setValor(std::string valor);
-        std::string getValor() const;
+        void setValor(string valor);
+        string getValor() const;
 };
 
 class Tempo{
@@ -46,12 +47,12 @@ class Tempo{
 
 class Texto{
     private:
-        std::string valor;
-        void validar(std::string valor);
+        string valor;
+        void validar(string valor);
 
     public:
-        void setValor(std::string valor);
-        std::string getValor() const;
+        void setValor(string valor);
+        string getValor() const;
 };
 
 #endif // CODIGO_H_INCLUDED

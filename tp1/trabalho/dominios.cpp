@@ -1,93 +1,94 @@
 #include "dominios.hpp"
 #include <cctype> // Para isalpha, isdigit, isupper
 #include <string>
+using namespace std;
 
 //Class Prioridade
-void Prioridade::validar(std::string valor){
+void Prioridade::validar(string valor){
     if (valor != "ALTA" && valor != "MEDIA" && valor != "BAIXA"){
-        throw std::invalid_argument("Prioridade invalida. Use ALTA, MEDIA ou BAIXA.");
+        throw invalid_argument("Prioridade invalida. Use ALTA, MEDIA ou BAIXA.");
     }
 }
 
-void Prioridade::setValor(std::string valor){
+void Prioridade::setValor(string valor){
     validar(valor);
     this->valor = valor;
 }
 
-std::string Prioridade::getValor() const {
+string Prioridade::getValor() const {
     return valor;
 }
 
 //Class Codigo
-void Codigo::validar(std::string valor){
+void Codigo::validar(string valor){
     if (valor.length() != 5) {
-        throw std::invalid_argument("Código deve ter 5 caracteres.");
+        throw invalid_argument("Código deve ter 5 caracteres.");
     }
 
     for (int i = 0; i < 2; i++) {
         if (!isupper(valor[i])) {
-            throw std::invalid_argument("Os dois primeiros caracteres devem ser letras maiuscular");
+            throw invalid_argument("Os dois primeiros caracteres devem ser letras maiuscular");
         }
     }
 
     for (int i = 2; i < 5; i++) {
         if (!isdigit(valor[i])) {
-            throw std::invalid_argument("Os tres ultimos caracteres devem ser numeros.");
+            throw invalid_argument("Os tres ultimos caracteres devem ser numeros.");
         }
     }
 }
 
-void Codigo::setValor(std:: string valor) {
+void Codigo::setValor( string valor) {
     validar(valor);
     this->valor = valor;
 }
 
-std::string Codigo::getValor() const {
+string Codigo::getValor() const {
     return valor;
 }
 
 //Class Nome
-void Nome::validar(std::string valor){
+void Nome::validar(string valor){
     if (valor.length() == 0 || valor.length() > 10) {
-        throw std::invalid_argument("O nome deve ter entre 1 e 10 caracteres.");
+        throw invalid_argument("O nome deve ter entre 1 e 10 caracteres.");
     }
 
     if (valor[0] == ' ') {
-        throw std::invalid_argument("O primeiro digito nao pode ser espaco.");
+        throw invalid_argument("O primeiro digito nao pode ser espaco.");
     }
 
     if (valor[valor.length() - 1] == ' ') {
-        throw std::invalid_argument("O ultimo caractere nao pode ser espaco");
+        throw invalid_argument("O ultimo caractere nao pode ser espaco");
     }
 
     for (size_t i = 0; i < valor.length(); i++) {
         if (!isalpha(valor[i]) && valor[i] != ' ') {
-            throw std::invalid_argument("Caracter pode ser letra maiuscula (A-Z), letra minuscula (a-z) ou espaco em branco");
+            throw invalid_argument("Caracter pode ser letra maiuscula (A-Z), letra minuscula (a-z) ou espaco em branco");
         }
 
         if (valor[i] == ' ') {
             if (i < valor.length() - 1){
                 if (!isalpha(valor[i + 1])) {
-                    throw std::invalid_argument("Espaco em branco deve ser seguido por letra.");
+                    throw invalid_argument("Espaco em branco deve ser seguido por letra.");
                 }
             }
         }
     }
 }
 
-void Nome::setValor(std:: string valor) {
+void Nome::setValor( string valor) {
     validar(valor);
     this->valor = valor;
 }
 
-std::string Nome::getValor() const {
+string Nome::getValor() const {
     return valor;
 }
 
 //CLASS TEMPO
 void Tempo::validar(int valor) {
     if (valor < 1 || valor > 365) {
-        throw std::invalid_argument("O valor deve ser entre 1 a 365.");
+        throw invalid_argument("O valor deve ser entre 1 a 365.");
     }
 }
 
@@ -101,45 +102,45 @@ int Tempo::getValor() const {
 }
 
 //CLASS TEXTO
-void Texto::validar(std::string valor) {
+void Texto::validar(string valor) {
     if (valor.length() == 0 || valor.length() > 40) {
-        throw std::invalid_argument("O texto deve ter entre 1 a 40 caracteres.");
+        throw invalid_argument("O texto deve ter entre 1 a 40 caracteres.");
     }
 
     if (valor[0] == ',' || valor[0] =='.' || valor[0] == ' ') {
-        throw std::invalid_argument("Primeiro caracter nao pode ser virgula, ponto ou espaco em branco.");
+        throw invalid_argument("Primeiro caracter nao pode ser virgula, ponto ou espaco em branco.");
     }
 
     if (valor[valor.length() - 1] == ',' || valor[valor.length() - 1] == '.' || valor[valor.length() - 1] == ' ') {
-        throw std::invalid_argument("Ultimo caracter nao pode ser virgula, ponto ou espaco em branco.");
+        throw invalid_argument("Ultimo caracter nao pode ser virgula, ponto ou espaco em branco.");
     }   
 
     for (size_t i = 0; i < valor.length(); i++) {
         if (!isalnum(valor[i]) && valor[i] != ',' && valor[i] != '.' && valor[i] != ' ') {
-            throw std::invalid_argument("Caracter pode ser letra (a-z ou A-Z), digito(0-9), virgula, ponto ou espaco em branco.");
+            throw invalid_argument("Caracter pode ser letra (a-z ou A-Z), digito(0-9), virgula, ponto ou espaco em branco.");
         }
 
         if (i < valor.length() - 1){
             if (valor[i] == ',' || valor[i] == '.') {
                 if(valor[i + 1] == ',' || valor[i + 1] == '.') {
-                    throw std::invalid_argument("Vírgula não pode ser seguida por vírgula ou ponto e ponto não pode ser seguido por vírgula ou ponto.");
+                    throw invalid_argument("Vírgula não pode ser seguida por vírgula ou ponto e ponto não pode ser seguido por vírgula ou ponto.");
                 }
             }
 
             if (valor[i] == ' ') {
                 if (!isalnum(valor[i + 1])) {
-                    throw std::invalid_argument("Espaco em branco deve ser seguido por letra ou digito.");
+                    throw invalid_argument("Espaco em branco deve ser seguido por letra ou digito.");
                 }
             }
         }   
     }
 }
 
-void Texto::setValor(std::string valor) {
+void Texto::setValor(string valor) {
     validar(valor);
     this->valor = valor;
 }
 
-std::string Texto::getValor() const {
+string Texto::getValor() const {
     return valor;
 }
