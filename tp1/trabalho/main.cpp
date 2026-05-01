@@ -1,5 +1,6 @@
 #include <iostream>
 #include "dominios.hpp"
+using namespace std;
 
 int main(){
     Prioridade prioridade;
@@ -8,70 +9,70 @@ int main(){
     Tempo tempo;
     Texto texto;
 
-    std::string minhaPrioridade;
-    std::string meuCodigo;
-    std::string meuNome;
+    string minhaPrioridade;
+    string meuCodigo;
+    string meuNome;
     int meuTempo;
-    std::string meuTexto;
+    string meuTexto;
 
-    std::cout << "Digite sua prioridade: ";
-    std::cin >> minhaPrioridade;
+    cout << "Digite sua prioridade: ";
+    cin >> minhaPrioridade;
 
-    std::cout << "Digite seu codigo: ";
-    std::cin >> meuCodigo;
+    cout << "Digite seu codigo: ";
+    cin >> meuCodigo;
 
-    std::cout << "Digite seu nome: ";
-    std::getline(std::cin >> std::ws, meuNome);
+    cout << "Digite seu nome: ";
+    getline(cin >> ws, meuNome);
 
-    std::cout << "Digite seu tempo: ";
-    std::cin >> meuTempo;
+    cout << "Digite seu tempo: ";
+    cin >> meuTempo;
 
-    std::cout << "Digite seu texto: ";
-    std::getline(std::cin >> std::ws, meuTexto);
+    cout << "Digite seu texto: ";
+    getline(cin >> ws, meuTexto);
 
     //CLASS PRIORIDADE - TESTE UNITARIO
     try {
         prioridade.setValor(minhaPrioridade);
-        std::cout << "Sucesso: " << prioridade.getValor() << std::endl;
+        cout << "Sucesso: " << prioridade.getValor() << endl;
     }
-    catch (const std:: invalid_argument& e) {
-        std::cerr << "Erro de validacao: " << e.what() << std::endl;
+    catch (const  invalid_argument& e) {
+        cerr << "Erro de validacao: " << e.what() << endl;
     }
 
     //CLASS CODIGO - TESTE UNITARIO
     try {
         codigo.setValor(meuCodigo);
-        std::cout << "Sucesso: " << codigo.getValor() << std::endl;
+        cout << "Sucesso: " << codigo.getValor() << endl;
     }
-    catch (const std:: invalid_argument& e) {
-        std::cerr << "Erro de validacao: " << e.what() << std::endl;
+    catch (const  invalid_argument& e) {
+        cerr << "Erro de validacao: " << e.what() << endl;
     }
 
     //CLASS NOME - TESTE UNITARIO
     try {
         nome.setValor(meuNome);
-        std::cout << "Sucesso: " << nome.getValor() << std::endl;
+        cout << "Sucesso: " << nome.getValor() << endl;
     }
-    catch (const std:: invalid_argument& e) {
-        std::cerr << "Erro de validacao: " << e.what() << std::endl;
+    catch (const  invalid_argument& e) {
+        cerr << "Erro de validacao: " << e.what() << endl;
     }
 
     //CLASS TEMPO - TESTE UNITARIO
         try {
             tempo.setValor(meuTempo);
-            std::cout << "Sucesso: " << tempo.getValor() << std::endl;
+            cout << "Sucesso: " << tempo.getValor() << endl;
         }
-        catch (const std:: invalid_argument& e) {
-            std::cerr << "Erro de validacao: " << e.what() << std::endl;
+        catch (const  invalid_argument& e) {
+            cerr << "Erro de validacao: " << e.what() << endl;
         }
 
     //CLASS TEXTO - TESTE UNITARIO
         try {
             texto.setValor(meuTexto);
-            std::cout << "Sucesso: " << texto.getValor() << std::endl;
+            cout << "Sucesso: " << texto.getValor() << endl;
         }
-        catch (const std:: invalid_argument& e) {
-            std::cerr << "Erro de validacao: " << e.what() << std::endl;
+        catch (const  invalid_argument& e) {
+            cerr << "Erro de validacao: " << e.what() << endl;
         }
 
     return 0;
