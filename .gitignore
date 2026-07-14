@@ -11,6 +11,7 @@
 output/
 build/
 bin/
+**/bin/
 
 # Configurações locais do VS Code
 .vscode/
