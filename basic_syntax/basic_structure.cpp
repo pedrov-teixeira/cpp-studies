@@ -6,6 +6,5 @@ int main(){
     cout << "ESTRUTURAS BASICAS DO CPP!!!\n";
     cout << "Testando quebra de linhas!" << endl;
 
-    system("pause");
     return 0;
 }
